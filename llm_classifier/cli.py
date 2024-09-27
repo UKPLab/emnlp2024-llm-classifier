@@ -1,4 +1,4 @@
-"""CLI interface for ukp_project_template project.
+"""CLI interface for llm_classifier project.
 
 Be creative! do whatever you want!
 
@@ -13,7 +13,7 @@ from .subpackage import SubPackageClass
 def main():  # pragma: no cover
     """
     The main function executes on commands:
-    `python -m ukp_project_template` and `$ ukp_project_template `.
+    `python -m llm_classifier` and `$ llm_classifier `.
 
     This is your program's entry point.
 

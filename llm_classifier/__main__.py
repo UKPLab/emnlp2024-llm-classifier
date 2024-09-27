@@ -1,4 +1,4 @@
-"""Entry point for ukp_project_template."""
+"""Entry point for llm_classifier."""
 
 from .cli import main  # pragma: no cover
 
