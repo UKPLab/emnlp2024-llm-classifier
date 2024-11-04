@@ -43,7 +43,7 @@ The folder data/Re3-Sci/tasks/edit_intent_classification contains the training, 
 
 [2]. https://github.com/UKPLab/re3
 ### Fine-tuining LLMs
-Check the 'finetune_EIC_\<X\>.py' scripts for the complete workflows with each approach: Gen, SeqC, XNet and SNet. You can customize the arguments within \<settings\> and \</settings\>. Refer to the paper for more details.
+Check the 'finetune_EIC_\<X\>.py' scripts for the complete workflows with each approach: Gen, SeqC, XNet and SNet. You can customize the arguments within \<settings\> and \</settings\>. 
 
 For example, fine-tune LLM with the SeqC approach:
 
@@ -89,9 +89,15 @@ For example, fine-tune LLM with the SeqC approach:
     # </settings>
     from tasks.task_data_preprocessor import TaskDataPreprocessor
     data_preprocessor = TaskDataPreprocessor(task_name=task_name, method=method).data_preprocessor
-    train_ds = data_preprocessor.preprocess_data(train_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
-    val_ds = data_preprocessor.preprocess_data(val_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
-    test_ds = data_preprocessor.preprocess_data(test_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
+    if method in ['finetuning_llm_seqc', 'finetuning_llm_snet', 'finetuning_llm_xnet']:
+        train_ds = data_preprocessor.preprocess_data(train_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
+        val_ds = data_preprocessor.preprocess_data(val_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
+        test_ds = data_preprocessor.preprocess_data(test_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
+        response_key = None
+    elif method in ['finetuning_llm_gen']:
+        train_ds,_ = data_preprocessor.preprocess_data(train_ds, max_length=max_length, input_type=input_type, is_train=True)
+        val_ds,_ = data_preprocessor.preprocess_data(val_ds, max_length=max_length, input_type=input_type, is_train=False)
+        test_ds, response_key = data_preprocessor.preprocess_data(test_ds, max_length=max_length, input_type=input_type, is_train=False)
 ```
 5. Fine-tune Model
 
