@@ -93,7 +93,7 @@ For example, fine-tune LLM with the SeqC approach:
     lora_dropout = 0.1 # Dropout probability for LoRA layers
     learning_rate = 2e-4 # Learning rate
     per_device_train_batch_size = 32 # Batch size per GPU for training 
-    train_epochs = 2 # Number of epochs to train
+    train_epochs = 10 # Number of epochs to train
     recreate_dir = True # Create a directory for the model
     # </settings>
     # create model dir to save the fine-tuned model
