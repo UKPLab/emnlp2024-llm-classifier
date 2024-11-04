@@ -7,14 +7,14 @@ In case of questions please contact [Qian Ruan](mailto:ruan@ukp.tu-darmstadt.de)
 
 ## Abstract
 Classification is a core NLP task architecture with many potential applications. While large language models (LLMs) have brought substantial advancements in text generation, their potential for enhancing classification tasks remains underexplored. To address this gap, we propose a framework for thoroughly investigating fine-tuning LLMs for classification, including both generation- and encoding-based approaches. We instantiate this framework in edit intent classification (EIC), a challenging and underexplored classification task. Our extensive experiments and systematic comparisons with various training approaches and a representative selection of LLMs yield new insights into their application for EIC. We investigate the generalizability of these findings on five further classification tasks. To demonstrate the proposed methods and address the data shortage for empirical edit analysis, we use our bestperforming EIC model to create Re3-Sci2.0, a new large-scale dataset of 1,780 scientific document revisions with over 94k labeled edits. The quality of the dataset is assessed through human evaluation. The new dataset enables an in-depth empirical study of human editing behavior in academic writing. 
-![](/resource/overview.pdf)
+![](/resource/overview.png)
 
 *Figure 1. In this work, we (1). present a general framework to explore the classification capabilities of LLMs, conducting extensive experiments and systematic comparisons on the EIC task; (2). use the best model to
 create the Re3-Sci2.0 dataset, which comprises 1,780 scientific document revisions (a-b), associated reviews (c, d), and 94,482 edits annotated with action and intent labels (e, f), spanning various scholarly domains;
 (3). provide a first in-depth empirical analysis of human editing behavior using this new dataset.*
 
 ## Approaches
-![](/resource/approaches.pdf)
+![](/resource/approaches.png)
 
 *Figure 2. Proposed approaches with a systematic investigation of the key components: input types (red), language models (green), and transformation functions (yellow). See §3 and §4 of the paper for details.*
 
@@ -40,7 +40,6 @@ For example, fine-tune LLM with the SeqC approach:
 1. Basic Settings
 
 ```python
-    ############################################################################
     # basic settings
     # <settings>
     task_name ='edit_intent_classification'
@@ -49,7 +48,6 @@ For example, fine-tune LLM with the SeqC approach:
     val_type = 'val' # name of the validation data in data/Re3-Sci/tasks/edit_intent_classification
     test_type = 'test' # name of the test data in data/Re3-Sci/tasks/edit_intent_classification
     # </settings>
-    ############################################################################
 ```
 2. Load Data
 
@@ -113,7 +111,7 @@ For example, fine-tune LLM with the SeqC approach:
 
 ```python
     # fine-tune model
-     # evaluate the fine-tuned model
+    # evaluate the fine-tuned model
     from tasks.task_evaluater import TaskEvaluater
     evaluater = TaskEvaluater(task_name=task_name, method=method).evaluater
     evaluater.evaluate(test_ds, model_dir=output_dir, labels=labels, label2id=label2id, id2label=id2label, emb_type=emb_type, input_type=input_type, response_key=response_key)
@@ -124,7 +122,7 @@ For example, fine-tune LLM with the SeqC approach:
 Please use the following citation:
 
 ```
-@misc{ruan2024llmclassifier,
+@inproceedings{ruan2024llmclassifier,
       title={Are Large Language Models Good Classifiers? A Study on Edit Intent Classification in Scientific Document Revisions}, 
       author={Qian Ruan and Ilia Kuznetsov and Iryna Gurevych},
       year={2024},
