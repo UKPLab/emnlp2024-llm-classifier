@@ -26,7 +26,22 @@ source ./.llm_classifier/bin/activate
 pip install -r requirements.txt
 ```   
    
+## Data for Edit Intent Classification (EIC)
+We used the Re3-Sci dataset for fine-tuning for EIC, please refer to the paper [1] and GitHub repository [2] for details. 
 
+The folder data/Re3-Sci/tasks/edit_intent_classification contains the training, validation, and test datasets. The CSV files within this folder include the following attributes:
+``` 
+-- 'edit_index': the unique index of the edit,
+-- 'id': the unique id of each edit created by combining node_ix_src and node_ix_tgt with === as a separator.
+-- 'node_ix_tgt':  the unique id for the source node, i.e., the new sentence,
+-- 'node_ix_tgt': the unique id for the target node, i.e., the old sentence,
+-- 'text_src': the content of the new sentence, empty in cases of deletions,
+-- 'text_tgt': the content of the old sentence, empty in cases of additions,
+-- 'label', the edit intent label.
+``` 
+[1]. https://aclanthology.org/2024.acl-long.255/
+
+[2]. https://github.com/UKPLab/re3
 ### Fine-tuining LLMs
 Check the 'finetune_EIC_\<X\>.py' scripts for the complete workflows with each approach: Gen, SeqC, XNet and SNet. You can customize the arguments within \<settings\> and \</settings\>. Refer to the paper for more details.
 
