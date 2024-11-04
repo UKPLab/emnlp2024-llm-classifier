@@ -37,7 +37,7 @@ The folder data/Re3-Sci/tasks/edit_intent_classification contains the training, 
 -- 'node_ix_tgt': the unique id for the target node, i.e., the old sentence,
 -- 'text_src': the content of the new sentence, empty in cases of deletions,
 -- 'text_tgt': the content of the old sentence, empty in cases of additions,
--- 'label', the edit intent label.
+-- 'label': the edit intent label.
 ``` 
 [1]. https://aclanthology.org/2024.acl-long.255/
 
