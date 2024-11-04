@@ -71,7 +71,7 @@ For example, fine-tune LLM with the SeqC approach:
     model_loader = TaskModelLoader(task_name=task_name, method=method).model_loader
     model, tokenizer = model_loader.load_model_from_path(model_path, labels=labels, label2id=label2id, id2label=id2label, emb_type=emb_type, input_type=input_type)
 ```
-4. Preprocess dataset
+4. Preprocess Data
 
 ```python
     # <settings>
@@ -83,7 +83,7 @@ For example, fine-tune LLM with the SeqC approach:
     val_ds = data_preprocessor.preprocess_data(val_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
     test_ds = data_preprocessor.preprocess_data(test_ds, label2id, tokenizer, max_length=max_length, input_type=input_type)
 ```
-5. Fine-tune model
+5. Fine-tune Model
 
 ```python
     # fine-tune model
