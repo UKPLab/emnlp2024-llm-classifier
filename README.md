@@ -126,7 +126,6 @@ For example, fine-tune LLM with the SeqC approach:
 6. Evaluate
 
 ```python
-    # fine-tune model
     # evaluate the fine-tuned model
     from tasks.task_evaluater import TaskEvaluater
     evaluater = TaskEvaluater(task_name=task_name, method=method).evaluater
