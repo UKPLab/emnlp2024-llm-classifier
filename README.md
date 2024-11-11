@@ -136,15 +136,23 @@ For example, fine-tune LLM with the SeqC approach:
 
 Please use the following citation:
 
+Qian Ruan, Ilia Kuznetsov, and Iryna Gurevych. 2024. Are Large Language Models Good Classifiers? A Study on Edit Intent Classification in Scientific Document Revisions. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 15049–15067, Miami, Florida, USA. Association for Computational Linguistics.
 ```
-@inproceedings{ruan2024llmclassifier,
-      title={Are Large Language Models Good Classifiers? A Study on Edit Intent Classification in Scientific Document Revisions}, 
-      author={Qian Ruan and Ilia Kuznetsov and Iryna Gurevych},
-      year={2024},
-      eprint={2410.02028},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.02028}, 
+@inproceedings{ruan-etal-2024-large,
+    title = "Are Large Language Models Good Classifiers? A Study on Edit Intent Classification in Scientific Document Revisions",
+    author = "Ruan, Qian  and
+      Kuznetsov, Ilia  and
+      Gurevych, Iryna",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.839",
+    pages = "15049--15067",
 }
 ```
 
