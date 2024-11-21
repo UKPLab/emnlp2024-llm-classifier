@@ -33,7 +33,7 @@ The folder data/Re3-Sci/tasks/edit_intent_classification contains the training, 
 ``` 
 -- 'edit_index': the unique index of the edit,
 -- 'id': the unique id of each edit created by combining node_ix_src and node_ix_tgt with === as a separator.
--- 'node_ix_tgt':  the unique id for the source node, i.e., the new sentence,
+-- 'node_ix_src':  the unique id for the source node, i.e., the new sentence,
 -- 'node_ix_tgt': the unique id for the target node, i.e., the old sentence,
 -- 'text_src': the content of the new sentence, empty in cases of deletions,
 -- 'text_tgt': the content of the old sentence, empty in cases of additions,
